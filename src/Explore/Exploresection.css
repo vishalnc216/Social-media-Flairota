@@ -1,0 +1,19 @@
+.Explorepost-section{
+    display: flex;
+   flex-wrap: wrap;
+  
+   
+    
+   
+  }
+  @media(max-width:1000px){
+    .Explorepost-section{
+        display: flex;
+       flex-wrap: wrap;
+       gap: 6px;
+       
+        
+       
+      }
+  }
+ 

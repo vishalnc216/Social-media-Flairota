@@ -1,0 +1,36 @@
+.Selectimage-btn1{
+    color:white;
+    background-color: #484ca5;
+    padding:0.7vw 1vw 0.7vw 1vw;
+    font-size:1vw;
+    border-radius:25px;
+    position: absolute;
+   
+  top: 10%;
+  left: 55%;
+   
+   }
+   .Selectimage{
+  
+   }
+   .Selectimage-btn2{
+       color:white;
+    background-color: #484ca5;
+    padding:0.7vw 1vw 0.7vw 1vw;
+    font-size:1vw;
+    border-radius:25px;
+    position: absolute;
+   
+  top: 90%;
+  left: 55%;
+   }
+   .Selectimage-img-section{
+    position: absolute;
+   
+    top: 15%;
+    left: 40%;
+   }
+   .Selectimage-img{
+    width: 37vw;
+    height: 33vw;
+   } 

@@ -1,0 +1,36 @@
+.chat{
+    margin-top: 6.3vh;
+    margin-left:21vw;
+    
+}
+.chat::-webkit-scrollbar {
+    display: none;
+}
+.chat-countainer{
+    display: flex;
+}
+.chat-countainer-mob{
+    display: none;
+}
+@media (max-width:1000px){
+    .chat{
+        margin-top: 6.3vh;
+        margin-left:28vw;
+        
+    }
+
+}
+
+@media (max-width:600px){
+    .chat{
+        margin: 0;
+    }
+    .chat-countainer{
+        display: none;
+    }
+    .chat-countainer-mob{
+        display: block;
+    }
+
+
+}

@@ -1,0 +1,116 @@
+body{
+    margin: 0px;
+}
+            .Submitpost-section-main{
+                position: relative;
+            }
+.Submitpost-section{
+
+   
+    cursor:pointer;
+    /* border-radius: 50%; */
+    margin-left: 24.5vw;
+    margin-top: 6.3vh;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Submitpost  {
+   display: flex;
+}
+
+.upload-img{
+    display:flex;
+    margin-left: 20vw;
+     align-items: center;
+    
+}
+.upload-img > img {
+    object-fit: contain;
+    max-width: 200px;
+}
+#input{
+    background: 0 0;
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+   width:70vw;
+    font-size: 16px;
+    height: 32px;
+    padding: 0 10px;
+
+       
+}
+.Submitpost-preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Submitpost-preview > img{
+    width: 5vw;
+    border-radius: 7px;
+    height: 5vw;
+}
+#flex{
+  
+}
+
+.Upload button{
+    background-color: #484ca5;
+    color:#fff;
+    font-size: 20px;
+    margin-left: 30vw;
+} 
+.uploadpost{
+    cursor: pointer;
+    width: 14.5vw;
+   
+    margin-top: 0.92vw;
+    
+    box-shadow: 2px 2px 5px #acacac;
+    border-radius: 1vw ;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    transition: 100ms ease-in;
+}
+.uploadpost-c1 > img{
+    
+    border-radius: 1vw 1vw 0 0;
+    width: 100%;
+}
+
+.uploadpost:hover{
+    transform: scale(1.02);
+}
+.uploadpost-c1{
+    width: 14.5vw;
+}
+.uploadpost-c2{
+    text-align: center;
+}
+.uploadpost-c2-caption{
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+.upload:hover > .uploadpost:not(:hover) {
+    filter: blur(4px);
+  }
+@media (max-width:600px){
+    .Submitpost-section{
+       
+           
+            cursor:pointer;
+            /* border-radius: 50%; */
+          margin-left: 11vw;
+            margin-top: 6.3vh;
+         
+            
+           
+        }
+}

@@ -1,0 +1,333 @@
+.Chattext{
+   background-color: #F4F8FE;
+  width: 45vw;
+  /* height: vh; */
+  box-shadow: 2px 2px 5px #acacac;
+  position: fixed;
+  margin-left: 34vw;
+  margin-top: 0;
+  display: flex;
+  height: 87.7vh;
+  top: 12.3vh;
+  flex-direction: column;
+  
+  
+  
+}
+.Chattext::-webkit-scrollbar {
+  display: none;
+}
+.chattext-countainer1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+.chattext-countainer1 > img{
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  margin-right: 1vw;
+}
+.chat-countainer-main{
+  overflow-y: scroll;
+  margin-bottom: 62px;
+}
+.chattext-name{
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+.Chatting-main{
+  padding: 0 1vw 0 1vw;
+  
+}
+.chat-user{
+  width: 22vw;
+  margin-top: 2vh; 
+}
+/* #888EE3 */
+.chat-user > small {
+  /* border: 1px solid; */
+  padding: 1vh 1vw;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+ width: fit-content;
+  height: fit-content;
+  border-radius: 10px 10px 10px 0;
+  display: flex;
+  background-color: #F2F3FF;
+  margin-top: 1.5vh;
+
+}
+.chat-me-countainer{
+  width: 100%;
+
+}
+.chat-me{
+  
+  right: 0;
+  width: 22vw;
+  right: 2vw;
+  margin-top: 2vh;
+  float: right;
+  position: relative;
+}
+.chat-me > small{
+  padding: 1vh 1vw;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+ width: fit-content;
+  height: fit-content;
+  border-radius: 10px 10px 0px 10px;
+  display: flex;
+  background-color: #888EE3 ;
+  color: white;
+  margin-top: 2vh;
+  position: absolute;
+  right: 0px;
+  margin-top: 18px;
+  bottom: 0px;
+ 
+ 
+}
+.chat-img-text{
+  object-fit: contain;
+  max-width: 20vw;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0;
+  
+}
+.chat-me > span {
+  right: 0;
+  
+  
+}
+.chat-time{
+  font-size: 0.7rem;
+  opacity: 70%;
+  margin-top: 7px;
+}
+.chattext-text{
+  width: 100%;
+  
+  position: Absolute ;
+  bottom: 0;
+  
+}
+.chattext-textinput{
+  width: 88%;
+  padding: 5px;
+  border-radius: 0.6vw;
+  height: 4.5vh;
+  border-radius: 0.5vw;
+  padding: 0 1vw;
+  opacity: 100%;
+  font-size: 1.2vw;
+  font-weight: 500;
+  text-decoration: none;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+.chat-message{
+  position: relative;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #F2F3FF;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 30px;
+  width: 50%;
+  border-radius: 10px 10px 10px 0;
+}
+.chat-receiver{
+  background-color:  #888EE3;
+  margin-left: auto;
+  color: white;
+  width: 50%;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.chat-time1{
+  /* margin-right: 10px; */
+  margin-left: 10px;
+  font-size: xx-small;
+  /* position: absolute;
+  right: 0px; */
+}
+.chat-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid lightgray;
+  background-color: rgb(231, 231, 231);
+  padding: 0 10px;
+}
+.chat-footer > form{
+  flex: 1;
+  display: flex;
+  
+}
+.chat-footer > form > input{
+  border-radius: 30px;
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+.chat-footer > form  > button{
+  display: none;
+}
+.chattext-text >  form> button{
+  display: none;
+}
+@media (max-width:1000px){
+  .Chattext{
+    display: none;
+  }
+}
+@media (max-width:600px){
+  /* .Chattext{
+    display: none;
+  } */
+  .Chattext {
+    background-color: #F4F8FE;
+    width: 100vw;
+    box-shadow: 2px 2px 5px #acacac;
+    position: fixed;
+    margin-left: 0;
+    margin-top: 0;
+    display: flex;
+    height: 100vh;
+    top: 0;
+    flex-direction: column;
+}
+.Chattext {
+  background-color: #F4F8FE;
+  width: 100vw;
+  box-shadow: 2px 2px 5px #acacac;
+  position: fixed;
+  margin-left: 0;
+  margin-top: 0;
+  display: flex;
+  height: 100vh;
+  top: 0;
+  flex-direction: column;
+}
+.chattext-countainer1 {
+
+  margin-top: 2vh;
+}
+.chattext-countainer1 > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 2vw;
+}
+.chattext-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.Chatting-main {
+  padding: 3vh 2vw;
+  position: relative;
+}
+.chat-user {
+  width: 48vw;
+  margin-top: 2vh;
+}
+.chat-user > .small > img {
+  /* border: 1px solid; */
+  padding: 1.3vh 1.5vw;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px 5px 5px 0;
+  display: flex;
+  background-color: #F2F3FF;
+  object-fit: contain;
+}
+.chat-me {
+  position: Absolute;
+  right: 0;
+  width: 49vw;
+  right: 2vw;
+  margin-top: 2vh;
+}
+.chat-me > small {
+  padding: 1.3vh 1.5vw;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px 5px 0px 5px;
+  display: flex;
+  background-color: #888EE3;
+  color: white;
+}
+.chattext-textinput {
+  width: 91%;
+  padding: 5px;
+  border-radius: 0.6vw;
+  height: 5.5vh;
+  border-radius: 30%;
+  border-radius: 0.5vw;
+  padding: 2vh 3vw;
+  opacity: 100%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 5px #acacac;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+  /* .Chat-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4vw;
+    margin-top: 4vw;
+    align-items: center;
+}
+.chat-input {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 2px 5px #acacac;
+  width: 80;
+  width: 87%;
+  border-radius: 0.5vw;
+  padding-right: 1vw;
+}
+.chat-input-1 {
+  width: 76vw;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 5px #acacac;
+  border: none;
+  height: 8vw;
+  border-radius: 1.5vw;
+  padding: 0 3vw;
+  opacity: 100%;
+  font-size: 3.8vw;
+  font-weight: 500;
+  text-decoration: none;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+} */
+}

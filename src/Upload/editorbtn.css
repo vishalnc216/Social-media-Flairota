@@ -1,0 +1,23 @@
+.editor-btn1{
+    color:black;
+    background-color: white;
+    padding:0.7vw 1vw 0.7vw 1vw;
+    font-size:1vw;
+    border-radius:25px;
+    position: absolute;
+     z-index: 100000;
+     right: 12vw;
+     top:1vh;
+   }
+   .editor-btn2{
+    color:black;
+    background-color: white;
+    padding:0.7vw 1vw 0.7vw 1vw;
+    font-size:1vw;
+    border-radius:25px;
+    position: absolute;
+     z-index: 100000;
+     right: 3vw;
+     top:1vh;
+   }
+   

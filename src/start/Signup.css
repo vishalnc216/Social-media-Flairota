@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+}
+.Form__main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  height: 490px;
+  padding: 45px 50px 40px 50px;
+  border-radius: 15px;
+
+  background-color: rgba(255, 255, 255);
+}
+
+.From__main-1 {
+  display: flex;
+  flex-direction: column;
+  width: 314px;
+  color: rgb(0, 0, 0);
+  height: auto;
+}
+
+.Form__text {
+  font-size: 35px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Form__input-username,
+.Form__input-password,
+.Form__input-button,
+.Form__input-Email {
+  padding: 7px 7px;
+  border: none;
+  border: 0.5px solid #888888;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  width: 290px;
+  height: 30px;
+  font-size: 17px;
+}
+.Form__input-username:hover,
+.Form__input-password:hover,
+.Form__input-button:hover,
+.Form__input-Email:hover {
+  box-shadow: 2px 2px 5px #888888;
+  border: none;
+}
+.Form__input-Email {
+  outline: none;
+  margin-bottom: 45px;
+}
+.Form__input-button {
+  height: 46px;
+  width: 306px;
+  margin-bottom: 15px;
+  background-color: rgb(229, 9, 20);
+  color: white;
+  border: none;
+}
+/* .Form__forgetpassword{
+    text-align: right;
+    margin-bottom: 25px;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+h3 {
+  text-align: center;
+  font-size: 23px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Form__Login-other {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.Form__facebook-img {
+  box-shadow: 2px 2px 5px #888888;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+}
+.Form__google-img {
+  box-shadow: 2px 2px 5px #888888;
+  border-radius: 50%;
+  padding: 4px;
+  width: 40px;
+}
+
+.Form__signup {
+  font-size: 20px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.Form__signup-link {
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  color: rgb(229, 9, 20);
+}
+
+@media screen and (max-width: 600px) {
+  .Form__main {
+    width: 300px;
+    padding-left: 30px;
+  }
+  .Form__input-username,
+  .Form__input-password,
+  .Form__input-button,
+  .Form__input-Email {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Form__main {
+    width: 250px;
+    padding-left: 30px;
+  }
+  .Form__input-username,
+  .Form__input-password,
+  .Form__input-button,
+  .Form__input-Email {
+    width: 250px;
+  }
+}

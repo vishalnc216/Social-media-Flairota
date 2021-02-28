@@ -1,0 +1,110 @@
+.Edit{
+  
+    display: flex;
+    flex-direction: column;
+    gap:6vh;
+    padding-top: 7vw;
+    margin-left: 26vw;
+    /* margin-top: 1vw; */
+    
+}
+.Et{
+   
+}
+.Edit-Profileimg{
+    display:flex;
+   margin-left: 20vw;
+    align-items: center;
+    gap:4.5vw;
+}
+.Edit-Profileimg > img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    /* object-fit: cover; */
+}
+.Edit-Profileimg > button{
+    background-color: #484ca5;
+    color:#fff;
+    font-size: 15px;
+}
+#flex{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+#input{
+    background: 0 0;
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+   width:70vw;
+    font-size: 16px;
+    height: 32px;
+    padding: 0 10px;
+   
+}
+textarea{
+    width:70vw;
+    background: 0 0;
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+   
+    font-size: 16px;
+   
+    padding: 0 10px;
+}
+.Edit-Submit > button{
+    background-color: #484ca5;
+    color:#fff;
+    font-size: 20px;
+    margin-left: 30vw;
+}
+
+@media (max-width:600px){
+    .Edit{
+        margin-left: 15vw;
+    }
+    .Edit-Profileimg > img{
+        width: 15vw;
+        border-radius: 50%;
+    }
+    .Edit-Profileimg
+    {
+        margin-left: 12vw;
+    }
+    .Edit-Profileimg > button{
+        background-color: #484ca5;
+        color:#fff;
+        font-size: 2.5vw;
+    }
+    .Edit-Submit > button{
+        background-color: #484ca5;
+        color:#fff;
+        font-size: 3.5vw;
+        margin-left: 30vw;
+    }
+}
+@media (max-width:600px){
+    .Edit-Profileimg > button{
+        background-color: #484ca5;
+        color:#fff;
+        font-size: 3.5vw;
+    }
+    
+    .Edit-Submit > button{
+        background-color: #484ca5;
+        color:#fff;
+        font-size: 4.5vw;
+        margin-left: 30vw;
+    }
+}

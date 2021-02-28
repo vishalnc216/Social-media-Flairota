@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+}
+.Profilepost-bar{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    text-align: center;
+}
+.Profilepost-bar1{
+    
+    cursor:pointer;
+    
+ 
+}
+p{
+    font-size: 25px;
+    font-weight: 500;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    margin-bottom: 7px;
+    ;
+}
+.count{
+    font-weight: 400;
+    font-size: 20px;
+   
+}
+
+hr{
+    margin-top: 0vh;
+    opacity: 30%;
+}
+.line{
+   border: none;
+    border-bottom: 0px solid #ffffff;
+    margin-top:1.6vh;
+    width: 8vw;
+    border-radius: 5px;
+}
+
+
+#Pofilepost-anim{
+    color: #484ca5 ;
+}
+
+#Pofilepost-anim-line{
+  
+    border-bottom: 3px solid #0c0fc4;
+    margin-top:1.6vh;
+    width: 8vw;
+    border-radius: 5px;
+}
+.Profilepost-content{
+    overflow-y: scroll;
+    height: 50vh;
+    
+}
+.Profilepost-content::-webkit-scrollbar {
+    display: none;
+}

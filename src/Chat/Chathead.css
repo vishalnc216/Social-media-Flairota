@@ -1,0 +1,80 @@
+.Chathead{
+    width: 79vw;
+}
+
+.Chat-header{
+    display: flex;
+    height: 6vh;
+    top: 6.3vh;
+    font-size: 1.5vw;
+    font-weight: bold;
+    
+    box-shadow: 2px 2px 5px #acacac;
+    background-color: #F5F5FF;
+    position: fixed;
+    z-index: 100;
+}
+.Chat-header-Chat{
+    cursor: pointer;
+    width: 39.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Chat-header-Globle{
+    cursor: pointer;
+    width:  39.5vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:1000px){
+    .Chat-header{
+
+        display: flex;
+        height: 6vh;
+        top: 6.3vh;
+        font-size: 2.5vw;
+        font-weight: bold;
+        box-shadow: 2px 2px 5px #acacac;
+        background-color: #F5F5FF;
+        position: fixed;
+        z-index: 100;
+    }
+    .Chat-header-Globle{
+        
+    }
+}
+
+@media (max-width:600px){
+    .Chat-header{
+        display: flex;
+        height: 10vw;
+        width: 100vw;
+        font-size: 5vw;
+        font-weight: bold;
+        font-style: italic;
+        box-shadow: 2px 2px 5px #acacac;
+        background-color: #F5F5FF;
+        top: 0;
+    
+    }
+    .Chat-header-Chat{
+        cursor: pointer;
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Chat-header-Globle{
+        cursor: pointer;
+        width:  50vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

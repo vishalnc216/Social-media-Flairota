@@ -1,0 +1,21 @@
+.Exploresection-categories{
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+    display:flex;
+    gap: 2vw;
+}
+.Exploresection-category{
+    background-color: #fff;
+    padding: 0.5vw 2vw 0.5vw 2vw;
+    border-radius: 1vw;
+    color: #7D80C3;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #acacac;
+    transition: 100ms ease-in;
+    opacity: 0.9;
+}
+.Exploresection-category:hover{
+    background-color: #7D80C3;
+    color: #fff;
+    opacity: 1;
+}

@@ -1,0 +1,43 @@
+.home-page {
+ 
+}
+
+.editor-btn2{
+ color:black;
+ background-color: white;
+ padding:0.7vw 1vw 0.7vw 1vw;
+ font-size:1vw;
+ border-radius:25px;
+ position: absolute;
+  z-index: 100000;
+  right: 3vw;
+  top:1vh;
+}
+/* .Topbar{
+  display: none;
+} */
+
+.ImageEditor {
+  z-index: -5;
+   
+}
+.editor-images{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff; 
+    width:92vw;
+    background-color: #000;
+   
+    height: 6vh;
+}
+
+.editor-images>img{
+ cursor: pointer;
+  border-radius: 7px;
+    width:2.5vw;
+    height:2.5vw;
+    margin-right: 0.5vw;
+    border:0.1vw solid rgb(238, 222, 222);
+}

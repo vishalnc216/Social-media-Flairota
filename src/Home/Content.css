@@ -1,0 +1,27 @@
+.body {
+    margin: 0;
+    z-index: 1000;
+}
+
+.Content {
+    width: 55vw;
+    margin-left: 21vw;
+    margin-top: 6.3vh;
+}
+
+@media (max-width:1000px) {
+    .Content {
+
+        margin-top: 5.3vh;
+        width: 69vw;
+        margin-left: 4.7rem;
+    }
+}
+
+@media (max-width:600px) {
+    .Content {
+        width: 100vw;
+        margin-left: 0;
+        margin-top: 7vh;
+    }
+}
