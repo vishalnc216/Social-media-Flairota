@@ -432,12 +432,12 @@ function Profile() {
 
                   <div className='profile-setting-menu'>
                     <div className='profile-setting-1'>Others</div>
-                    {/* <List>
+                    <List>
                       <ListItem button>
                         <InboxIcon />
                         <div className='profile-inside'>Coins Collected</div>
                       </ListItem>
-                    </List> */}
+                    </List>
                   </div>
 
                   <div className='profile-setting-menu'>
@@ -589,4 +589,3 @@ function Profile() {
 }
 
 export default Profile;
-
