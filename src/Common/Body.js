@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{useState,useEffect} from "react";
 import "./Body.css";
 import Topbar from "./Topbar";
 
@@ -28,6 +28,7 @@ import DynamicFeedOutlinedIcon from '@material-ui/icons/DynamicFeedOutlined';
 // import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 function Body() {
+  
   const bbStyle = {
     
 }
@@ -112,12 +113,13 @@ const LinkStyle ={
              </Link>   
             </div>
       </div>
-        <Topbar/>
+        {/* <Topbar/> */}
      <div className="Body">
      <Helmet>
               <script src="./toolbaranim.js" type="text/javascript" />
        </Helmet>
-     <Sidebar className="Sidebar"/>
+       {/* {path="/signup" ? <Sidebar className="Sidebar"/>: null} */}
+     {/* <Sidebar className="Sidebar"/> */}
          <Switch>
             <Route path="/home"  component={home} />
             <Route path="/Explore" component={Explore} />
@@ -140,7 +142,7 @@ const LinkStyle ={
          </Switch>
 
       </div>
-      
+    
       
       {/* <div id="tapbar-mb"> 
       

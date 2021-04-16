@@ -1,5 +1,7 @@
 html {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(Home2.jpeg);
+    
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -19,7 +21,7 @@ body {
   flex-direction: column;
   width: 310px;
   height: 470px;
-  padding: 45px 50px 40px 50px;
+  padding: 25px 50px 25px 50px;
   border-radius: 15px;
 
   background-color: rgba(0, 0, 0, 0.6);
@@ -41,12 +43,11 @@ body {
   text-align: center;
 }
 .Form__input-username,
-.Form__input-password,
 .Form__input-button {
   padding: 10px 10px;
   border: none;
   border: 0.5px solid #888888;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border-radius: 10px;
   width: 290px;
   height: 30px;
@@ -122,3 +123,27 @@ h3 {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+.Form__input-password-1 {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .Form__input-password{
+
+      padding: 7px 7px;
+      border: none;
+      border: 0.5px solid #888888;
+      margin-bottom: 15px;
+      border-radius: 10px 0 0 10px;
+      width: 252px;
+      height: 30px;
+      font-size: 17px;
+      border-right: 0;
+}
+.visible-icon {
+      border: 0.5px solid #888888;
+      padding: 8.5px 8px;
+      margin-bottom: 15px;
+      border-left: 0;
+      border-radius: 0 10px 10px 0;
+  } */ 

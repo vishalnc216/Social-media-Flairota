@@ -74,7 +74,7 @@ function Postclick() {
                 </div>
                  
                 <div className="Postclick-mb-post">
-                    <img src="/image/10.jpg"/>
+                    <img src="/image/meme2.jpg"/>
                 </div>
                
                 <div className="Postclick-mb-response">

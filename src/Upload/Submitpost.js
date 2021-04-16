@@ -18,6 +18,7 @@ function Submitpost() {
                    Edited Image:
                </div>
                <img src={File} alt=""/>
+               {console.log(File)}
            </div>
            <div className="upload-caption" id="flex">
                 <span>Enter Your Caption</span>

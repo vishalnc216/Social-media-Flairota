@@ -9,11 +9,14 @@ body {
   display: flex;
   flex-direction: column;
   width: 310px;
-  height: 490px;
-  padding: 45px 50px 40px 50px;
+  height: 550px;
+  padding: 15px 50px 10px 50px;
   border-radius: 15px;
 
   background-color: rgba(255, 255, 255);
+}
+.username_input{
+  position: relative;
 }
 
 .From__main-1 {
@@ -23,44 +26,106 @@ body {
   color: rgb(0, 0, 0);
   height: auto;
 }
-
+.CheckCircleIcon{
+  position: absolute;
+  right: 12px;
+    top: 9px;
+}
+.Confirm-password{
+  margin-bottom: 5px;
+}
 .Form__text {
   font-size: 35px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
+.password-error{
+  color: red;
+  
+}
 .Form__input-username,
-.Form__input-password,
 .Form__input-button,
 .Form__input-Email {
   padding: 7px 7px;
   border: none;
   border: 0.5px solid #888888;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border-radius: 10px;
   width: 290px;
   height: 30px;
   font-size: 17px;
 }
+.next-1,.next-2{
+  padding: 4px 8px;
+    border-radius: 50%;
+    border: solid 0.5px;
+    margin-right: 10px;
+}
+/* .Submit-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* ..Form__input-Email{
+  margin-bottom: 2px;
+} */
 .Form__input-username:hover,
 .Form__input-password:hover,
 .Form__input-button:hover,
-.Form__input-Email:hover {
+.Form__input-Email:hover,
+.Form__input-password-1-1:hover,
+.visible-icon:hover {
   box-shadow: 2px 2px 5px #888888;
   border: none;
 }
 .Form__input-Email {
   outline: none;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 .Form__input-button {
-  height: 46px;
-  width: 306px;
+  height: 40px;
+  width: 305px;
   margin-bottom: 15px;
   background-color: rgb(229, 9, 20);
   color: white;
   border: none;
+  text-align: center;
+  padding: 7px;
+  margin-top: 10px;
+}
+.Form__input-password-1-1{
+  padding: 7px 7px;
+  border: none;
+  border: 0.5px solid #888888;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  width: 290px;
+  height: 30px;
+  font-size: 17px;
+}
+.Form__input-password-0 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.Form__input-password{
+
+    padding: 7px 7px;
+    border: none;
+    border: 0.5px solid #888888;
+    margin-bottom: 15px;
+    border-radius: 10px 0 0 10px;
+    width: 252px;
+    height: 30px;
+    font-size: 17px;
+    border-right: 0;
+}
+.visible-icon {
+    border: 0.5px solid #888888;
+    padding: 10px 8px;
+    margin-bottom: 15px;
+    border-left: 0;
+    border-radius: 0 10px 10px 0;
 }
 /* .Form__forgetpassword{
     text-align: right;

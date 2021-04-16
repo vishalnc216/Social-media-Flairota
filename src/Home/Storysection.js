@@ -1,40 +1,140 @@
-import React,{useState} from 'react'
+import React from 'react'
 import "./Storysection.css"
 
 function Storysection() {
-  const[Stories,setStories]=useState([
-    {
-      "profileimg":"/image/3.jpg",
-      "username":"John"
-    },
-    {
-      "profileimg":"/image/3.jpg",
-      "username":"Sam"
-    }
-  ])
     return (
-      <div className="Storysection">
-
-        {Stories.map((Story)=>{
-          return(
-
-          
-             <div className="Story-countainer1">
-                
-                  <div className="Story-img-countainer">
-                    <img className="Story-img" src={Story.profileimg}/>
-                  </div>
-                    
-                    <span className="Story-name">{Story.username}</span>
-                    
-              </div>
-             
-             
-        
-          )
-  
-        })}
-      </div>
+        <div className="Storysection">
+           <div className="Story-countainer1">
+              
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  
+                  <span className="Story-name"> _._dreamgirl21</span>
+                  
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           <div className="Story-countainer1">
+                <div className="Story-img-countainer">
+                  <img className="Story-img" src="/image/3.jpg"/>
+                </div>
+                  <span className="Story-name"> Lucifer</span>
+            </div>
+           
+        </div>
     )
 }
 

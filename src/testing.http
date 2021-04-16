@@ -1,0 +1,2 @@
+GET https://memeapp-backend.herokuapp.com/api/accounts/user/4
+

@@ -1,15 +1,44 @@
 import React, { useState } from "react";
 import "./Form.css";
 import { Link } from "react-router-dom";
-import { useDataLayerValue } from "../ContextAPI/DataLayer";
+import Sidebar from "../Common/Sidebar"
+import { useDataLayerValue } from "../ContextAPI/DataLayer.js";
+import axios from "../axios";
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+
 function Form() {
+  // <Sidebar style={SidebarStyle}/>
   const linkStyle = {
+    
     textDecoration: "none",
   };
+  const Iconshow = {
+    display: "block",
+  };
+   const Iconhide = {
+    display: "none",
+  };
+  
+  const signinfunc = (e) => {
+    e.preventDefault();
+     axios.post('/api/accounts/login/',{
+     email:SigninUserName,
+ 
+     password:SigninPassword
+    }).then((res) => {
+     console.log(res.data.key);
+     
+   }).catch((err) => console.log(err));
+  }  
   const [{ SigninUserName, SigninPassword }, dispatch] = useDataLayerValue();
+  const[passwordtype,setpasswordtype] = useState("password");
+  const[icon1style,seticon1style] = useState(Iconshow);
+  const[icon2style,seticon2style] = useState(Iconhide);
   return (
+    
     <div className="Form__main">
-      <form className="From__main-1">
+      <form className="From__main-1 " onSubmit={signinfunc}>
         <h1 className="Form__text">Sign in </h1>
         <input
           value={SigninUserName}
@@ -18,12 +47,14 @@ function Form() {
               type: "SET_SigninUserName",
               SigninUserName: e.target.value,
             })
+
           }
           className="Form__input-username"
           type="text"
           name=""
           placeholder="Phone no,username,email"
         />
+        
         <div className="Form__input-password-1">
           <input
             value={SigninPassword}
@@ -34,17 +65,20 @@ function Form() {
               })
             }
             className="Form__input-password"
-            type="text"
+            type={passwordtype}
             name=""
             placeholder="Password "
           />
+          <div className="visible-icon">
+            <VisibilityIcon onClick={() => { setpasswordtype("text");seticon2style(Iconshow);seticon1style(Iconhide)}}  style={icon1style} />
+            <VisibilityOffIcon onClick={() => { setpasswordtype("password");seticon1style(Iconshow);seticon2style(Iconhide)}} style={icon2style}/>
+          </div>
         </div>
-        <input
+        <button
           className="Form__input-button"
           type="submit"
-          name=""
-          value="Login"
-        />
+         
+        >Sign in </button>
         <a href="#" className="Form__forgetpassword">
           Forgot Password?
         </a>

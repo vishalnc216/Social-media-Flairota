@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import Header from "./start/Header";
 import Form from "./start/Form";
 import "./App.css";
@@ -9,40 +9,29 @@ import Edit from "./Profile/Edit"
 import Profile from "./Profile/Profile"
 
 import Chat from "./Chat/chat"
+import Signup1 from "./start/Signup1";
 
 
 function App() {
-  const[example,setexample]=useState("hello")
-  console.log(example.length);
-  if(example.length>8){
-
-  }
-  var c=0;
-  for (var i = 0; i < example.length; i++) {
-    if(example[i]){
-      
-    }
-  }
   return (
-  
    <Router>
 
      <Switch>
       
-       
-       
        {/* <Route path="/Profile"> <Profile/></Route> */}
         </Switch>
     
       <div className="App">
-        {/* <Header />
+        <Header />
         <Signup/> 
         <Switch>
           <Route path="/" exact component={Form} />
           <Route path="/Signup" component={Signup} />
           
-        </Switch> */}
-        <Body />
+          
+        </Switch>
+        {/* <Body /> */}
+        
       </div>
     </Router>
   );
