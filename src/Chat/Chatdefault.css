@@ -1,0 +1,7 @@
+.chatdefault-test{
+    display: block;
+}@media(max-width:600px){
+    .chatdefault-test{
+        display: none;
+    }
+}

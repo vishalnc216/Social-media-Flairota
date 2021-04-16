@@ -116,9 +116,9 @@ body{
 @media(max-width:1000px){
     .Sidebar {
         background-color: #F5F5FF;
-        height: 88vh;
+        height: 91vh;
         padding: 5vh 0 1px 0px;
-        width: 4.7rem;
+        width: 8.5vw;
         position: fixed;
         top: 4.3vh;
         

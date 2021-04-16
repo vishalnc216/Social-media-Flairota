@@ -1,18 +1,29 @@
-import React from 'react'
-import './Upload.css'
-import editor from "./editor"
-import {Link} from 'react-router-dom';
-import Edit from "../Profile/Edit"
+import React from 'react';
+import './Upload.css';
+import editor from './editor';
+import { Link } from 'react-router-dom';
+import Edit from '../Profile/Edit';
 import AccountBalanceRoundedIcon from '@material-ui/icons/AccountBalanceRounded';
-import { useDataLayerValue } from "../ContextAPI/DataLayer";
+import { useDataLayerValue } from '../ContextAPI/DataLayer';
+import Topbar from '../Common/Topbar';
+import Sidebar from '../Common/Sidebar';
+// import axios from "../axios"
+
 function Upload() {
-    const [{ File , Caption , Hashtag}, dispatch] = useDataLayerValue();
-    const Linkstyle = {
-        textDecoration:"none",
-    }
-    return (
-        <div className="Upload">
-            {/* <div className="upload-img">
+  const [{ File, Caption, Hashtag }, dispatch] = useDataLayerValue();
+  const Linkstyle = {
+    textDecoration: 'none',
+  };
+  // const uploadfunc = (e)=>{
+  //     e.preventDefault();
+  //     axios.post('/api/posts/upload/')
+  // }
+  return (
+    <div>
+      <Topbar />
+      <Sidebar className='Sidebar' location='upload' />
+      <div className='Upload'>
+        {/* <div className="upload-img">
                     <input type="file"  onChange={(e) =>
                     dispatch({
                         type: "SET_File",
@@ -35,7 +46,7 @@ function Upload() {
            </div>
            <div className="upload-main-Hashtag" id="flex">
                <span>Lorem Ipsum is simply dummy text :-</span>
-               <input id="input" value={Hashtag} type="text" placeholder=""
+               <input id="input2" value={Hashtag} type="text" placeholder=""
                 onChange={(e) => 
                 dispatch({
                     type:"SET_Hashtag",
@@ -44,15 +55,13 @@ function Upload() {
                 }
                />
            </div> */}
-           {/* <Link to="/editor">    
+        {/* <Link to="/editor">    
             <div className="Upload-button">
               <button>Submit</button>
             </div>
             </Link> */}
 
-            
-                
-                {/* <div className="uploadpost-c1">
+        {/* <div className="uploadpost-c1">
                 <AccountBalanceRoundedIcon/>
                 </div>
                 <div className="uploadpost-c2">
@@ -74,27 +83,26 @@ function Upload() {
                 </div>
                 
             </div> */}
-            <div className="upload-mb-main-container">
-            <Link to="/Selectimage" style={Linkstyle} className="gallery-countainer">
-              <div>
-                <AccountBalanceRoundedIcon/>
-                <h2>Gallery</h2>
-             </div>
-             </Link>
-             <hr></hr>
-              <div className="meme-countainer">
-                  <AccountBalanceRoundedIcon/>
-                  <h2>Meme Template</h2>
-              </div>
+        <div className='upload-mb-main-container'>
+          <Link
+            to='/Selectimage'
+            style={Linkstyle}
+            className='gallery-countainer'
+          >
+            <div>
+              <AccountBalanceRoundedIcon />
+              <h2>Gallery</h2>
             </div>
-               
-          
-          
-          
-          
-         </div>
-  
-    )
+          </Link>
+          <hr></hr>
+          <div className='meme-countainer'>
+            <AccountBalanceRoundedIcon />
+            <h2>Meme Template</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Upload
+export default Upload;

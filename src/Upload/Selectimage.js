@@ -2,9 +2,15 @@ import React from 'react'
 import "./Selectimage.css"
 import { useDataLayerValue } from "../ContextAPI/DataLayer";
 import {Link} from "react-router-dom"
+import Topbar from "../Common/Topbar"
+import Sidebar from "../Common/Sidebar"
 function Selectimage() {
     const [{ File }, dispatch] = useDataLayerValue();
     return (
+      <div>
+
+             <Topbar/>
+            <Sidebar className="Sidebar" location="upload"/>
         <div className="Selectimage">
             <input type="file" name="" value="" id="File" onChange={(e) =>
                     dispatch({
@@ -40,6 +46,7 @@ function Selectimage() {
      
      </div>
         </div>
+     </div>
     )
 }
 

@@ -1,7 +1,12 @@
 body {
   margin: 0;
 }
+.bottombar-icons {
+  display: none;
+}
 .Form__main {
+  /* animation: form1 1.5s linear ;
+  animation-fill-mode: forwards; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -15,7 +20,104 @@ body {
 
   background-color: rgba(255, 255, 255);
 }
-.username_input{
+.Form__main1 {
+  /* animation: form2 1.5s  linear ;
+  animation-fill-mode: forwards; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  height: 550px;
+  padding: 15px 50px 10px 50px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255);
+}
+/* @keyframes form1 {
+  0%   {left:50%;}
+
+  
+  100% {left: -50%;}
+}
+@keyframes form2 {
+  0%   {opacity: 0;}
+
+  
+  100% {opacity: 1;}
+} */
+.strength-password {
+  width: 100%;
+  height: 6px;
+
+  background: transparent;
+  transition: all 300ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+}
+.none {
+  display: none;
+}
+.VeryWeak {
+  color: #f44336;
+}
+.Weak {
+  color: #f44336;
+}
+.Medium {
+  color: #ffeb3b;
+}
+.Strong {
+  color: #4caf50;
+}
+.VeryStrong {
+  color: #4caf50;
+}
+.strength-password-container {
+  width: 100%;
+
+  position: relative;
+
+  height: 6px;
+  border-radius: 10px;
+  margin-top: -1vh;
+  margin-bottom: 1vh;
+
+  background-color: rgb(0, 0, 0, 0.07);
+}
+
+.strength-password[data-score='null'] {
+  width: 0;
+  background: red;
+}
+
+.strength-password[data-score='0'] {
+  width: 5%;
+  background: #f44336;
+}
+
+.strength-password[data-score='1'] {
+  width: 25%;
+  background: #f44336;
+}
+
+.strength-password[data-score='2'] {
+  width: 50%;
+  background: #ffeb3b;
+}
+
+.strength-password[data-score='3'] {
+  width: 75%;
+  background: #4caf50;
+}
+
+.strength-password[data-score='4'] {
+  width: 100%;
+  background: #4caf50;
+}
+.username_input {
   position: relative;
 }
 
@@ -26,22 +128,39 @@ body {
   color: rgb(0, 0, 0);
   height: auto;
 }
-.CheckCircleIcon{
+.CheckCircleIcon {
   position: absolute;
   right: 12px;
-    top: 9px;
+  top: 9px;
 }
-.Confirm-password{
+.Confirm-password {
   margin-bottom: 5px;
 }
 .Form__text {
   font-size: 35px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.password-error{
+.password-error {
   color: red;
-  
+}
+.dOOLy {
+  background-color: #4caf50;
+}
+.Form__input-Gender {
+  padding: 7px 7px;
+  border: none;
+  border: 0.5px solid #888888;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  width: 290px;
+  height: 30px;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .Form__input-username,
 .Form__input-button,
@@ -55,11 +174,12 @@ body {
   height: 30px;
   font-size: 17px;
 }
-.next-1,.next-2{
+.next-1,
+.next-2 {
   padding: 4px 8px;
-    border-radius: 50%;
-    border: solid 0.5px;
-    margin-right: 10px;
+  border-radius: 50%;
+  border: solid 0.5px;
+  margin-right: 10px;
 }
 /* .Submit-next {
   display: flex;
@@ -74,6 +194,7 @@ body {
 .Form__input-button:hover,
 .Form__input-Email:hover,
 .Form__input-password-1-1:hover,
+.Form__input-Gender:hover,
 .visible-icon:hover {
   box-shadow: 2px 2px 5px #888888;
   border: none;
@@ -93,7 +214,7 @@ body {
   padding: 7px;
   margin-top: 10px;
 }
-.Form__input-password-1-1{
+.Form__input-password-1-1 {
   padding: 7px 7px;
   border: none;
   border: 0.5px solid #888888;
@@ -104,29 +225,28 @@ body {
   font-size: 17px;
 }
 .Form__input-password-0 {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.Form__input-password{
-
-    padding: 7px 7px;
-    border: none;
-    border: 0.5px solid #888888;
-    margin-bottom: 15px;
-    border-radius: 10px 0 0 10px;
-    width: 252px;
-    height: 30px;
-    font-size: 17px;
-    border-right: 0;
+.Form__input-password {
+  padding: 7px 7px;
+  border: none;
+  border: 0.5px solid #888888;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  width: 252px;
+  height: 30px;
+  font-size: 17px;
+  border-right: 0;
 }
-.visible-icon {
-    border: 0.5px solid #888888;
+/* .visible-icon { */
+/* border: 0.5px solid #888888;
     padding: 10px 8px;
     margin-bottom: 15px;
     border-left: 0;
-    border-radius: 0 10px 10px 0;
-}
+    border-radius: 0 10px 10px 0; */
+/* } */
 /* .Form__forgetpassword{
     text-align: right;
     margin-bottom: 25px;
@@ -138,8 +258,8 @@ align-items: center;
 h3 {
   text-align: center;
   font-size: 23px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Form__Login-other {
@@ -166,38 +286,100 @@ h3 {
 .Form__signup {
   font-size: 20px;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .Form__signup-link {
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
   color: rgb(229, 9, 20);
 }
 
 @media screen and (max-width: 600px) {
   .Form__main {
-    width: 300px;
-    padding-left: 30px;
+    padding-left: 59px;
+    margin: 0vw;
+    width: 70vw;
+  }
+  .From__main-1 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    color: rgb(0, 0, 0);
+    height: auto;
+    margin: auto;
   }
   .Form__input-username,
   .Form__input-password,
   .Form__input-button,
   .Form__input-Email {
-    width: 300px;
+    width: 49vw;
+    height: 43px;
+  }
+  .Form__input-password-0 {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+  }
+  .visible-icon {
+    /* border: 0.5px solid #888888; */
+    /* padding: 10px 8px; */
+    /* margin-bottom: 15px; */
+    /* border-left: 0; */
+    /* border-radius: 0 10px 10px 0; */
+    position: absolute;
+    right: 3vw;
+    bottom: 24px;
+  }
+  .Form__input-password-1-1 {
+    padding: 7px 7px;
+    border: none;
+    border: 0.5px solid #888888;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 49vw;
+    height: 43px;
+    font-size: 17px;
+  }
+  .bottombar {
+    display: none;
   }
 }
-@media screen and (max-width: 400px) {
-  .Form__main {
-    width: 250px;
-    padding-left: 30px;
+@media screen and (max-width: 500px) {
+  .From__main-1 {
+    margin-left: -4vw;
+    margin-right: -4vw;
   }
-  .Form__input-username,
-  .Form__input-password,
-  .Form__input-button,
-  .Form__input-Email {
-    width: 250px;
+  .From__main-1 {
+    margin-left: -6vw;
+    margin-right: -6vw;
+    margin-top: -3vw;
+  }
+  .Form__main {
+    padding-left: 59px;
+    margin: 0vw;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    padding: 15px 50px 10px 50px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255);
+  }
+  /* center{
+} */
+  .Form__text {
+    margin-bottom: 4vw;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1vw;
   }
 }

@@ -12,11 +12,14 @@ body{
     box-shadow: 2px 2px 5px #acacac;
     margin-top: 5px;
     transition:100ms ease-in;
-
+    /* border-radius: 7px; */
+   
+    filter: brightness(0.8);
 }
 .img:hover{
     transform: scale(1.05);
     cursor: pointer;
+    filter: brightness(1);
 }
 @media (max-width: 600px){
     ::-webkit-scrollbar {

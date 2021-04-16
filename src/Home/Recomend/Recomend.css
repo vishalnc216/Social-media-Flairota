@@ -78,13 +78,13 @@ body{
 height: 3.5vw;
 border-radius: 50%;
 }
-@media(max-width:600px){
+@media(max-width:1000px){
     .Recomend{
         display: none;
     }
 }
-@media(max-width:1000px){
+@media(max-width:600px){
     .Recomend{
-        display: block;
+        display: none;
     }
 }

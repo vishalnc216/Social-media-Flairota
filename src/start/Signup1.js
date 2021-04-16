@@ -24,7 +24,7 @@ function Signup1() {
   return (
     <div className="Form__main">
       <form className="From__main-1">
-        <center>
+        <center style={{marginBottom:"10px"}}>
           <h1 className="Form__text"> Sign Up </h1>
         </center>
         <input

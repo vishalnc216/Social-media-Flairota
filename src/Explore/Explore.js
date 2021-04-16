@@ -4,6 +4,9 @@ import Trending from './Trending'
 import "./Explore.css"
 
 import { BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
+import Topbar from "../Common/Topbar"
+import Sidebar from "../Common/Sidebar"
+
 function Explore() {
   
     const LinkStyle ={
@@ -12,7 +15,11 @@ function Explore() {
      
   };
     return (
+<div>
+<Topbar/>
+<Sidebar className="Sidebar" location="explore"/>        
       <Router>
+
 <div className="Explore">
            <div className="Explore-header">
              <Link to="/Exploresection" style={LinkStyle}>
@@ -38,7 +45,7 @@ function Explore() {
            </div>
         </div>
       </Router>
-        
+</div>        
     )
 }
 

@@ -9,7 +9,7 @@ function home() {
         <div>
           <div className= "Body_main">
             <Topbar/>
-            <Sidebar className="Sidebar"/>
+            <Sidebar className="Sidebar" location="home"/>
             <Content className="Content"/>
             <Recomend className="Recomend" />
       </div>

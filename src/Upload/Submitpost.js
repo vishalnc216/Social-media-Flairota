@@ -1,13 +1,18 @@
 import React from 'react'
 import "./Submitpost.css"
 import {Link} from 'react-router-dom';
+import Topbar from "../Common/Topbar"
 import Sidebar from "../Common/Sidebar"
 import { useDataLayerValue } from "../ContextAPI/DataLayer";
 function Submitpost() {
     const [{ File , Caption , Hashtag}, dispatch] = useDataLayerValue();
     return (
         <div className="Submitpost">
-            <Sidebar/>
+            
+           
+
+            <Topbar/>
+            <Sidebar className="Sidebar" location="upload"/>
             <div   className="Submitpost-section-main">
                 
             </div>
@@ -32,7 +37,7 @@ function Submitpost() {
            </div>
            <div className="upload-main-Hashtag" id="flex">
                <span>Lorem Ipsum is simply dummy text :-</span>
-               <input id="input" value={Hashtag} type="text" placeholder=""
+               <input id="input1" value={Hashtag} type="text" placeholder=""
                 onChange={(e) => 
                 dispatch({
                     type:"SET_Hashtag",
