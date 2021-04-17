@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Postclick.css';
 import { Link } from 'react-router-dom';
 import { useDataLayerValue } from '../ContextAPI/DataLayer';
@@ -7,14 +7,19 @@ import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 import { InsertEmoticon } from '@material-ui/icons';
 import Popover from '@material-ui/core/Popover';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import themechanger from '../Profile/Profile';
 function Postclick(props) {
+  useEffect(() => {
+    console.log(themechanger);
+  }, []);
+
   const [emojiclick, setemojiclick] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [editedcap, seteditedcap] = useState('');

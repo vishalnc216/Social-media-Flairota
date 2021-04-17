@@ -14,10 +14,11 @@ export const initialState = {
   searchpeople: '',
   userid: null,
   postId: '',
-  storylist:""
+  storylist: '',
+  themechange: '',
 };
 const reducer = (state, action) => {
-  // console.log(action);
+  console.log(action);
   switch (action.type) {
     case 'SET_SignupUserName':
       return {
@@ -101,6 +102,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         storylist: action.storylist,
+      };
+    case 'SET_themechange':
+      return {
+        ...state,
+        themechange: action.themechange,
       };
 
     default:

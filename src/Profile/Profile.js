@@ -8,7 +8,7 @@ import Post from './Post';
 import Following from './container2/Following';
 import Followers from './container2/Followers';
 import SettingsIcon from '@material-ui/icons/Settings';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { useDataLayerValue } from '../ContextAPI/DataLayer';
 import Topbar from '../Common/Topbar';
 import Sidebar from '../Common/Sidebar';
@@ -38,8 +38,20 @@ import Fade from '@material-ui/core/Fade';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import TextField from '@material-ui/core/TextField';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+let themechanger;
 
 function Profile() {
+  const [state, setState] = React.useState({
+    checkedB: true,
+  });
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+  themechanger = state.checkedB;
+  // console.log(themechanger);
   const [password, setpassword] = useState('');
 
   const Iconshow = {
@@ -425,9 +437,19 @@ function Profile() {
                     <List>
                       <ListItem button>
                         <InboxIcon />
-                        <div className='profile-inside'>Coins Collected</div>
+                        <div className='profile-inside'>Theme</div>
                       </ListItem>
                     </List>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={state.checkedB}
+                          onChange={handleChange}
+                          name='checkedB'
+                          color='primary'
+                        />
+                      }
+                    />
                   </div>
 
                   <div className='profile-setting-menu'>
@@ -572,12 +594,12 @@ function Profile() {
                   <div className='Saved-icon'>🔥</div>
                 </div>
                 <div className='Profile-mb-postorsaved'>
-                  <Switch>
+                  {/* <Switch>
                     <Route path='/Post' component={Post} />
                     <Route path='/Followers' component={Followers} />
-                    <Route path='/Following' component={Following} />
-                    {/* <Route path='/Save' component={Following} /> */}
-                  </Switch>
+                    <Route path='/Following' component={Following} /> */}
+                  {/* <Route path='/Save' component={Following} /> */}
+                  {/* </Switch> */}
                 </div>
               </div>
             </div>
@@ -588,4 +610,6 @@ function Profile() {
   );
 }
 
+console.log(themechanger);
+export { themechanger };
 export default Profile;
