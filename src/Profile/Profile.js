@@ -51,7 +51,7 @@ function Profile() {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
   themechanger = state.checkedB;
-  // console.log(themechanger);
+  console.log(themechanger);
   const [password, setpassword] = useState('');
 
   const Iconshow = {

@@ -14,7 +14,7 @@ import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import themechanger from '../Profile/Profile';
+import {themechanger} from '../Profile/Profile';
 function Postclick(props) {
   useEffect(() => {
     console.log(themechanger);
