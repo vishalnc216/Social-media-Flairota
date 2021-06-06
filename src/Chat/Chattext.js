@@ -1,95 +1,110 @@
-
-import "./Chattext.css"
-import { Avatar , IconButton } from '@material-ui/core'
-import React, {useState , useEffect} from 'react'
+import './Chattext.css';
+import { Avatar, IconButton } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
 // import DountLargeIcon from "@material-ui/icons/DonutLarge";
 // import ChatIcon from "@material-ui/icons/Chat";
-import MicIcon from "@material-ui/icons/Mic";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { InputOutlined, InsertEmoticon, KeyboardArrowDown } from '@material-ui/icons';
+import MicIcon from '@material-ui/icons/Mic';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {
+  InputOutlined,
+  InsertEmoticon,
+  KeyboardArrowDown,
+} from '@material-ui/icons';
 function Chattext() {
-    const [input ,setinput ] = useState("")
-    const [chatImage,setchatImage] = useState("")
-    const sendMessage = (e) => {
-        e.preventDefault();
-        console.log("hello😉" , input);
-        
-    }
-    return (
-        <div className="Chattext">
-            <div className="chattext-countainer1">
-                <img src="/image/3.jpg"/>
-                <span className="chattext-name">Lucifer Mornigstar</span>
-            </div>
-           <div className="chat-countainer-main"> 
-            <div className="Chatting-main">
+  const [chatImage, setchatImage] = useState('');
+  const [input, setInput] = useState('');
+  const [seed, setSeed] = useState('');
+  //   const { roomId } = useParams();
+  const [roomName, setRoomName] = useState('');
+  //   const [{ user }, dispatch] = useDataLayerValue();
+  const [messages, setMessages] = useState([
+    {
+      name: 'nishat',
+    },
+  ]);
 
-                {/* <div className="chat-user">
-                    
-                    <small className="chat-img-text"><img className="chat-img-text" src="/image/meme2.jpg" ></img> </small>
-                    <small className="chat-img-text"><img className="chat-img-text" ></img> I want, my project Become  most Successful project. and everyperson use that daily min  2 hr. I want, my project Become  most Successful project. and everyperson use that daily min  2 hr. I want, my project Become  most Successful project. and everyperson use that daily min  2 hr. I want, my project Become  most Successful project. and everyperson use that daily min  2 hr. </small>
-                   
-                    <span className="chat-time"> 6:00 PM</span>
+  const sendMessage = (e) => {
+    e.preventDefault();
+    console.log('hello😉', input);
+    setMessages([...messages, { msg: input }]);
+    var element = document.getElementById('chat-body');
+    element.scrollTop = element.scrollHeight;
+    // db.collection('rooms').doc(roomId).collection('messages').add({
+    //     messages :input,
+    //     name : user.displayName,
+    //     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+
+    // });
+    setInput('');
+  };
+  return (
+    <div className='Chattext'>
+      <div className='chattext-countainer1'>
+        <img src='/image/3.jpg' />
+        <span className='chattext-name'>Lucifer Mornigstar</span>
+      </div>
+      <div className='chat-countainer-main'>
+        <div className='chat-body' id='chat-body'>
+          {messages.map((message) => (
+            <div
+              className={
+                message.msg ==
+                'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available'
+                  ? 'chat-inside-rev'
+                  : 'chat-inside'
+              }
+            >
+              <p className={'chat-message'}>
+                <span className='chat-name'>Nishat</span>
+                <div className='chatmain'>
+                  <pre className='chat-main-message'>{message.msg}</pre>
                 </div>
-               <div className="chat-me-countainer">
-                    <div className="chat-me">
-                        
-                        <small> {input} </small>
-                        <span className="chat-time"> 6:00 PM</span>
-                    </div>
-                </div>  */}
-                <p className={`chat-message ${ true && `chat-receiver`}`}> 
-                {/* <span className="chat-name">Kshitij (Legend)</span> */}
-                {input}
-                
-                <span className="chat-time1">
-                    12:00PM
-                </span>
-                </p>
-                <img src={chatImage}/>
+              </p>
+              <span className='chat-time'>12pm</span>
             </div>
-          
-            
-            </div>
-            
-           <div className="chattext-text">
-              
-              {/* <form>
-                    <input value={input}
-                            onChange={(e)=> setInput(e.target.value)} className="chattext-textinput" type="text" placeholder="Type a Message"/>
-                    <button onClick = {sendMessage} type="submit">Send a message</button>
-               </form> */}
-               <div className="chat-footer">
-                <InsertEmoticon/>
-                <form>
-                    <input value={input}
-                    onChange={(e)=> setinput(e.target.value)} type="text" placeholder="Type a Message"/>
-                    <button onClick = {sendMessage} type="submit">Send a message</button>
-                </form>
 
-                
-                <input type="file" name="" value="" id="File1" onChange={(e) => setchatImage(URL.createObjectURL(e.target.files[0]))
-                    } hidden/> 
-                    <label for="File1"  ><MicIcon/></label>
-
-                    {console.log(chatImage)}
-           
-            </div>
-           </div>
-           
+            //   <div>
+            //     <p>{message.name}</p>
+            //     <span>{message.mes}</span>
+            //   </div>
+          ))}
         </div>
-           
-       
-        
-    )
+      </div>
+
+      <div className='chat-footer'>
+        <InsertEmoticon />
+        <form onSubmit={sendMessage}>
+          <textarea
+            className='chat-textarea'
+            rows='10'
+            cols='50'
+            spellCheck='false'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            type='textarea'
+            placeholder='Type a Message'
+          />
+          <button type='submit' className='chat-send'>
+            Send
+          </button>
+        </form>
+
+        {/* <input
+          type='file'
+          name=''
+          value=''
+          id='File1'
+          onChange={(e) => setchatImage(URL.createObjectURL(e.target.files[0]))}
+          hidden
+        />
+        <label for='File1'>
+          <MicIcon />
+        </label> */}
+
+        {console.log(chatImage)}
+      </div>
+    </div>
+  );
 }
-    
 
-export default Chattext
-
-
-
-
-
-
-
+export default Chattext;

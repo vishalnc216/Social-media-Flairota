@@ -14,11 +14,38 @@ import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import {themechanger} from '../Profile/Profile';
+import Lottie from 'react-lottie';
+import wait from '../lotty/wait.json';
+var lightdark;
+
 function Postclick(props) {
+  var [themer, setthemer] = useState('');
   useEffect(() => {
-    console.log(themechanger);
+    setthemer(localStorage.getItem('themechanger'));
+    // dispatch({
+    //   type: 'SET_themechange',
+    //   themechange: lightdark,
+    // });
   }, []);
+
+  const themechange = () => ({
+    lighttheme: [
+      { card: 'white' },
+      { text: 'black' },
+      { back: '' },
+      { comment: 'white' },
+      { border: 'none' },
+    ],
+    // f5f5ff
+    darktheme: [
+      { card: '#000000' },
+      { text: 'white' },
+      { back: '#212121' },
+      { comment: '#222222' },
+      { border: '2px solid rgb(47, 51, 54)' },
+    ],
+  });
+  lightdark = themechange();
 
   const [emojiclick, setemojiclick] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -61,6 +88,9 @@ function Postclick(props) {
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
+      color: 'black',
+      width: '40vw',
+      height: '40vw',
     },
   }));
   const [open1, setOpen1] = React.useState(false);
@@ -79,7 +109,9 @@ function Postclick(props) {
   const [{ postId, File, Caption, Hashtag }, dispatch] = useDataLayerValue();
   const [comment, setComment] = useState('');
   const [postlike, setpostlike] = useState('');
+  const [likearray, setlikearray] = useState('');
   let [temcomments, settemComments] = useState('');
+  const [likecheck, setlikecheck] = useState('');
   const memeappid = localStorage.getItem('memeappid');
   const [totalcommentcount, settotalcommentcount] = useState('');
   var count = 0;
@@ -120,6 +152,12 @@ function Postclick(props) {
   //     .then((res) => {
   //       settotalcommentcount(res.data);
   // }
+  useEffect(() => {
+    axios.get(`/api/posts/likes/${props.data.id}/`).then((res) => {
+      setlikearray(res.data);
+      console.log(res.data.length);
+    });
+  }, [likecheck]);
   function settime() {
     var gotdate = new Date(props.data.date);
     var presentdate = new Date();
@@ -199,12 +237,10 @@ function Postclick(props) {
       })
       .then((res) => console.log(res));
   }
-
-  async function postlikes(id) {
-    await axios.get(`/api/posts/likes/${id}/`).then((res) => {
-      console.log(res);
-    });
+  function postlikes(id) {
+    handleOpenlike();
   }
+
   function postidpass(id) {
     // dispatch({
     //   type: 'SET_postId',
@@ -237,13 +273,16 @@ function Postclick(props) {
         post_id: postid,
       })
       .then((res) => {
-        console.log(res);
+        // setlikecheck(res.data);
+        setlikecheck(res.data.liked);
+        console.log(res.data.liked);
         if (!res.data.liked) {
           flag = 0;
         }
       })
       .catch((err) => console.log(err));
   }
+
   async function editpost() {
     if (editedcap == props.data.caption) {
       alert('you have not edited caption');
@@ -256,11 +295,53 @@ function Postclick(props) {
         .then((res) => window.location.reload());
     }
   }
+
+  // const handleOpenlike = () => {
+  //   dispatch({
+  //     type: 'SET_likeopen',
+  //     likeopen: true,
+  //   });
+  // };
+
+  // const handleCloselike = () => {
+  //   dispatch({
+  //     type: 'SET_likeopen',
+  //     likeopen: false,
+  //   });
+  // };
+  const [openlike, setOpenlike] = React.useState(false);
+
+  const handleOpenlike = () => {
+    setOpenlike(true);
+  };
+
+  const handleCloselike = () => {
+    setOpenlike(false);
+  };
+  // console.log(openlike);
+
+  //
   return (
-    <div className='Postclick'>
+    <div
+      style={
+        themer == 'true'
+          ? {
+              backgroundColor: lightdark.darktheme[0].card,
+              color: lightdark.darktheme[1].text,
+              border: lightdark.darktheme[4].border,
+            }
+          : {
+              backgroundColor: lightdark.lighttheme[0].card,
+              color: lightdark.lighttheme[1].text,
+              border: lightdark.lighttheme[4].border,
+            }
+      }
+      className='Postclick'
+    >
       {props.data != null ? (
         <div className='Postclick-mb'>
           {/* {commentarray(props.data.id)} */}
+
           <div className='Postclick-mb-container-1'>
             <div className='seprate-1'>
               <div className='Postclick-mb-img'>
@@ -378,29 +459,98 @@ function Postclick(props) {
             <div className='postclick-photo-like'>
               <img
                 className='active'
-                src='/image/like.svg'
+                src={
+                  likecheck == false
+                    ? '/image/icons/lightlike.svg'
+                    : '/image/icons/redlike.svg'
+                }
                 onClick={() => likepost1(props.data.id)}
               />
-              <span onClick={() => postlikes(props.data.id)}>69 Likes</span>
+              <button
+                className='likepost1-button'
+                onClick={() => postlikes(props.data.id)}
+                type='button'
+              >
+                {likearray.length + ' ' + 'likes'}
+              </button>
+
+              <Modal
+                aria-labelledby='transition-modal-title'
+                aria-describedby='transition-modal-description'
+                className={classes1.modal}
+                open={openlike}
+                onClose={handleCloselike}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                  timeout: 500,
+                }}
+              >
+                <Fade in={openlike}>
+                  <div className={classes1.paper}>
+                    {likearray != '' ? (
+                      likearray.map((data) => {
+                        return (
+                          <div className='postclick-like-click-1'>
+                            <div className='postclick-like-click-1-1'>
+                              <img
+                                src={`https://res.cloudinary.com/di9lrcrlj/${data.user.userimage}`}
+                              />
+                              <div className='postclick-like-click-1-2'>
+                                <span className='postclick-like-click-1-2-username'>
+                                  {data.user.user.username}
+                                </span>
+                                <span className='postclick-like-click-1-2-name'>
+                                  {data.user.user.first_name +
+                                    ' ' +
+                                    data.user.user.last_name}
+                                </span>
+                              </div>
+                            </div>
+                            <div className='postclick-like-click-1-3'>
+                              <button className='postclick-like-click-1-3-button'>
+                                Follow
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div>hello</div>
+                    )}
+                  </div>
+                </Fade>
+              </Modal>
             </div>
             <div className='postclick-photo-share'>
-              <img src='/image/save.svg' />
-              <span>69 Likes</span>
+              <img src='/image/icons/blackshare.svg' />
             </div>
 
             <div
               className='postclick-photo-Bookmark'
               onClick={() => saveunsavepost(props.data.id)}
             >
-              <img src='/image/share.svg' />
-              <span>69 Likes</span>
+              <img src='/image/icons/blackstar.svg' />
             </div>
           </div>
-          <div className='postclick-comment-section'>
+          <div
+            className='postclick-comment-section'
+            // style={
+            //   themer == 'true'
+            //     ? {
+            //         backgroundColor: lightdark.darktheme[3].comment,
+            //         color: lightdark.darktheme[1].text,
+            //       }
+            //     : {
+            //         backgroundColor: lightdark.lighttheme[3].comment,
+            //         color: lightdark.lighttheme[1].text,
+            //       }
+            // }
+          >
             <div className='comment-show'>
               <div className='comment-show-1'>
                 <div className='comment-show-1-1'>
-                  <img src='/image/2.jpg'></img>
+                  <img src='/image/7.jpg'></img>
                   <div className='postclick-comment-name'>
                     <span className='postclick-comment-name-usename'>
                       Kshitij
@@ -425,7 +575,20 @@ function Postclick(props) {
               </div>
             </div>
           </div>
-          <div className='comment-input-0'>
+          <div
+            className='comment-input-0'
+            // style={
+            //   themer == 'true'
+            //     ? {
+            //         backgroundColor: lightdark.darktheme[3].comment,
+            //         color: lightdark.darktheme[1].text,
+            //       }
+            //     : {
+            //         backgroundColor: lightdark.lighttheme[3].comment,
+            //         color: lightdark.lighttheme[1].text,
+            //       }
+            // }
+          >
             <Popover
               id={id}
               open={open}
@@ -451,15 +614,50 @@ function Postclick(props) {
               color='primary'
               onClick={handleClick}
             >
-              <InsertEmoticon onClick={() => setemojiclick(true)} />
+              <InsertEmoticon
+                style={
+                  themer == 'true'
+                    ? {
+                        color: lightdark.darktheme[1].text,
+                      }
+                    : {
+                        color: lightdark.lighttheme[1].text,
+                      }
+                }
+                onClick={() => setemojiclick(true)}
+              />
             </a>
 
-            <div className='comment-input'>
+            <div
+              className='comment-input'
+              // style={
+              //   themer == 'true'
+              //     ? {
+              //         backgroundColor: lightdark.darktheme[3].comment,
+              //         color: lightdark.darktheme[1].text,
+              //       }
+              //     : {
+              //         backgroundColor: lightdark.lighttheme[3].comment,
+              //         color: lightdark.lighttheme[1].text,
+              //       }
+              // }
+            >
               <form
                 className='postclick-form'
                 onSubmit={(e) => sendComment(e, props.data.id)}
               >
                 <input
+                  // style={
+                  //   themer == 'true'
+                  //     ? {
+                  //         backgroundColor: lightdark.darktheme[3].comment,
+                  //         color: lightdark.darktheme[1].text,
+                  //       }
+                  //     : {
+                  //         backgroundColor: lightdark.lighttheme[3].comment,
+                  //         color: lightdark.lighttheme[1].text,
+                  //       }
+                  // }
                   className='comment-input-1'
                   type='text'
                   placeholder='Enter comment'
@@ -469,7 +667,20 @@ function Postclick(props) {
 
                 <button className='postclick-comment-button' type='submit'>
                   {/* <img src='https://img.icons8.com/ios/50/000000/topic.png' /> */}
-                  <img src='https://img.icons8.com/ios/50/000000/topic.png' />
+                  <img
+                    // style={
+                    //   themer == 'true'
+                    //     ? {
+                    //         backgroundColor: lightdark.darktheme[3].comment,
+                    //         color: lightdark.darktheme[1].text,
+                    //       }
+                    //     : {
+                    //         backgroundColor: lightdark.lighttheme[3].comment,
+                    //         color: lightdark.lighttheme[1].text,
+                    //       }
+                    // }
+                    src='https://img.icons8.com/ios/50/000000/topic.png'
+                  />
                 </button>
               </form>
             </div>
@@ -482,7 +693,20 @@ function Postclick(props) {
               },
             }}
           >
-            <div className='Postclick-view-comment'>
+            <div
+              style={
+                themer == 'true'
+                  ? {
+                      backgroundColor: lightdark.darktheme[3].comment,
+                      color: lightdark.darktheme[1].text,
+                    }
+                  : {
+                      backgroundColor: lightdark.lighttheme[3].comment,
+                      color: lightdark.lighttheme[1].text,
+                    }
+              }
+              className='Postclick-view-comment'
+            >
               <div onClick={() => postidpass(props.data.id)}>
                 View All Comments <span>(299)</span>
               </div>
@@ -490,10 +714,12 @@ function Postclick(props) {
           </Link>
         </div>
       ) : (
-        <div>loadddd.....</div>
+        <div></div>
       )}
     </div>
   );
 }
 
+// console.log(openliketravel);
+export { lightdark };
 export default Postclick;

@@ -17,7 +17,7 @@ body {
   height: 550px;
   padding: 15px 50px 10px 50px;
   border-radius: 15px;
-
+  border: 1px solid;
   background-color: rgba(255, 255, 255);
 }
 .Form__main1 {
@@ -194,10 +194,15 @@ body {
 .Form__input-button:hover,
 .Form__input-Email:hover,
 .Form__input-password-1-1:hover,
-.Form__input-Gender:hover,
-.visible-icon:hover {
+.Form__input-Gender:hover
+/* .visible-icon:hover  */ {
   box-shadow: 2px 2px 5px #888888;
   border: none;
+}
+.visible-icon {
+  position: absolute;
+  right: 8px;
+  top: 12px;
 }
 .Form__input-Email {
   outline: none;
@@ -220,7 +225,7 @@ body {
   border: 0.5px solid #888888;
   margin-bottom: 5px;
   border-radius: 10px;
-  width: 290px;
+  width: 300px;
   height: 30px;
   font-size: 17px;
 }
@@ -235,7 +240,7 @@ body {
   border: 0.5px solid #888888;
   margin-bottom: 15px;
   border-radius: 10px;
-  width: 252px;
+  width: 300px;
   height: 30px;
   font-size: 17px;
   border-right: 0;

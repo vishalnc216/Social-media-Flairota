@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './Body.css';
 import Topbar from './Topbar';
-import Story from "../Home/Story"
+import Story from '../Home/Story';
 import Sidebar from './Sidebar';
-import { BrowserRouter as Router, Switch, Route, Link,withRouter } from 'react-router-dom';
-import home from '../Home/home';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter,
+} from 'react-router-dom';
+import home from '../Home/Home';
 import chat from '../Chat/chat';
 import Explore from '../Explore/Explore';
 import Upload from '../Upload/Upload';
@@ -21,6 +27,8 @@ import Chatdefault from '../Chat/Chatdefault';
 import Comment from '../Common/Comment';
 import Chatname from '../Chat/Chatname';
 import Chattext from '../Chat/Chattext';
+import Needhelp from '../Home/Needhelp';
+import Needhelpform from '../Home/Needhelpform';
 import bottombar from './bottombar.js';
 import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
@@ -121,7 +129,11 @@ function Body() {
           <Route path='/editor' component={editor} />
           <Route path='/Selectimage' component={Selectimage} />
           <Route path='/Profile' exact component={Profile} />
-          <Route path='/stories/:username/:userid/:storyid' exact component={(Story)} />
+          <Route
+            path='/stories/:username/:userid/:storyid'
+            exact
+            component={Story}
+          />
           <Route path='/chat' component={Chatdefault} />
           <Route path='/chat/chattext'>
             <Chatname />
@@ -131,6 +143,7 @@ function Body() {
           <Route path='/search' exact component={Search}></Route>
           <Route path='/ExploreClick' component={ExploreClick}></Route>
           <Route path='/Edit' component={Edit}></Route>
+          <Route path='/Needhelpform' component={Needhelpform}></Route>
           <Route path='/:username' exact component={userprofile} />
         </Switch>
       </div>

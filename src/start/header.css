@@ -8,6 +8,7 @@ body {
   background-color: black;
   padding-top: 10px;
   justify-content: space-between;
+  display: none;
 }
 .Header__header-1 {
   display: flex;
@@ -18,7 +19,7 @@ body {
   margin: 0 10px 0 10px;
 }
 .Header__name {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
 }
 .Header__nevi-links {

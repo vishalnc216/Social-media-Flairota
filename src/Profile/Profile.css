@@ -160,6 +160,19 @@ body {
 .Profile-mb {
   display: none;
 }
+.changepassword-forgot {
+  display: flex;
+  justify-content: flex-end;
+}
+.changepassword-forgot-button {
+  padding: 0.4vw 0.7vw;
+  border: none;
+  background-color: white;
+  box-shadow: 2px 2px 5px #acacac;
+  margin-right: 1.4vw;
+  font-size: 1.1vw;
+  border-radius: 5px;
+}
 @media (max-width: 1000px) {
   .Profile {
     display: none;

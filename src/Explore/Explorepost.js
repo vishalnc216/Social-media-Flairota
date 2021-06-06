@@ -40,9 +40,56 @@ function Explorepost(props) {
   const handleClose = () => {
     setOpen(false);
   };
+  var lightdark;
+  var [themer, setthemer] = useState('');
+  useEffect(() => {
+    setthemer(localStorage.getItem('themechanger'));
+    // dispatch({
+    //   type: 'SET_themechange',
+    //   themechange: lightdark,
+    // });
+  }, []);
+  const themechange = () => ({
+    lighttheme: [
+      { card: 'white' },
+      { text: 'black' },
+      { back: '' },
+      { comment: 'white' },
+      { bigbox: 'white' },
+      { border: 'none' },
+      { boxShadow: '2px 2px 5px #acacac' },
+    ],
+    // f5f5ff
+    darktheme: [
+      { card: '#000000' },
+      { text: 'white' },
+      { back: '#212121' },
+      { comment: 'rgb(32, 35, 39)' },
+      { bigbox: 'rgb(14 14 14)' },
+      { border: 'rgb(14 14 14)' },
+      { boxShadow: '2px 2px 5px rgb(14 14 14)' },
+    ],
+  });
+  lightdark = themechange();
   return (
     <div>
-      <div onClick={handleOpen} className='Explorepost'>
+      <div
+        style={
+          themer == 'true'
+            ? {
+                backgroundColor: lightdark.darktheme[3].comment,
+                color: lightdark.darktheme[1].text,
+                boxShadow: lightdark.darktheme[6].boxShadow,
+              }
+            : {
+                backgroundColor: lightdark.lighttheme[3].comment,
+                color: lightdark.lighttheme[1].text,
+                boxShadow: lightdark.lighttheme[6].boxShadow,
+              }
+        }
+        onClick={handleOpen}
+        className='Explorepost'
+      >
         <div className='Explorepost-c1'>
           <img
             src={`https://res.cloudinary.com/di9lrcrlj/${props.data.image}`}

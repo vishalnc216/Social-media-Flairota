@@ -13,7 +13,7 @@ import Body from './Common/Body';
 import Edit from './Profile/Edit';
 import Profile from './Profile/Profile';
 
-// import Chattext from './Chat/Chattext';
+import Chattext from './Chat/Chattext';
 import Signup1 from './start/Signup1';
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
           </Route>
         </Switch>
         <Body />
+        {/* <Chattext /> */}
       </div>
     </Router>
   );

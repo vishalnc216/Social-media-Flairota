@@ -1,0 +1,122 @@
+.needhelpform {
+  display: flex;
+  flex-direction: column;
+  gap: 0vh;
+  padding-top: 7vw;
+  margin-left: 31vw;
+  /* margin-top: 1vw; */
+}
+.needhelpform-1 {
+  margin-top: 4vh;
+}
+.firstname-lastname {
+  display: flex;
+  gap: 2vw;
+  margin-bottom: 1.5vw;
+}
+.needhelpform-Profileimg {
+  display: flex;
+  margin-left: 17vw;
+  align-items: center;
+  gap: 4.5vw;
+}
+.needhelpform-Profileimg > img {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  /* object-fit: cover; */
+}
+.needhelpform-Profileimg > button {
+  background-color: #484ca5;
+  color: #fff;
+  font-size: 15px;
+}
+.MuiFormControl-root.MuiTextField-root.patient-name {
+  width: 30vw;
+}
+.MuiFormControl-root.MuiTextField-root.patient-number {
+  width: 19vw;
+}
+#flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+#input {
+  background: 0 0;
+  border: 1px solid #dbdbdb;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #262626;
+  color: rgba(var(--i1d, 38, 38, 38), 1);
+  width: 25vw;
+  font-size: 16px;
+  height: 32px;
+  padding: 0 10px;
+}
+textarea {
+  width: 52vw;
+  background: 0 0;
+  border: 1px solid #dbdbdb;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #262626;
+  color: rgba(var(--i1d, 38, 38, 38), 1);
+
+  font-size: 16px;
+  margin: 2vh 0 0 10px;
+  padding: 0 10px;
+}
+.needhelpform-Submit > button {
+  background-color: #484ca5;
+  color: #fff;
+  font-size: 20px;
+  margin-left: 20vw;
+  border: none;
+  padding: 0.7vw;
+  width: 15vw;
+  border-radius: 7px;
+  margin-top: 2vw;
+}
+
+@media (max-width: 600px) {
+  .needhelpform {
+    margin-left: 15vw;
+  }
+  .needhelpform-Profileimg > img {
+    width: 15vw;
+    border-radius: 50%;
+  }
+  .needhelpform-Profileimg {
+    margin-left: 12vw;
+  }
+  .needhelpform-Profileimg > button {
+    background-color: #484ca5;
+    color: #fff;
+    font-size: 2.5vw;
+  }
+  .needhelpform-Submit > button {
+    background-color: #484ca5;
+    color: #fff;
+    font-size: 3.5vw;
+    margin-left: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .needhelpform-Profileimg > button {
+    background-color: #484ca5;
+    color: #fff;
+    font-size: 3.5vw;
+  }
+
+  .needhelpform-Submit > button {
+    background-color: #484ca5;
+    color: #fff;
+    font-size: 4.5vw;
+    margin-left: 30vw;
+  }
+}

@@ -41,17 +41,18 @@ import TextField from '@material-ui/core/TextField';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-let themechanger;
 
 function Profile() {
-  const [state, setState] = React.useState({
-    checkedB: true,
-  });
+  const themelightdark = localStorage.getItem('themechanger');
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    localStorage.setItem('themechanger', event.target.checked);
+    // dispatch
   };
-  themechanger = state.checkedB;
-  console.log(themechanger);
+  const [state, setState] = React.useState({
+    checkedB: themelightdark,
+  });
+  console.log(themelightdark);
   const [password, setpassword] = useState('');
 
   const Iconshow = {
@@ -150,12 +151,21 @@ function Profile() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
   const handleOpen = () => {
     setOpen1(true);
+    setOpen2(false);
   };
 
   const handleClose = () => {
     setOpen1(false);
+  };
+  const handleOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose2 = () => {
+    setOpen2(false);
   };
 
   const handleDrawerOpen = () => {
@@ -176,10 +186,8 @@ function Profile() {
     backgroundImage: `url(${bgimg})`,
   };
   const memeusertoken = localStorage.getItem('memeapptoken');
-  const [
-    { Profileimage, Name, Username, Bio, userid },
-    dispatch,
-  ] = useDataLayerValue();
+  const [{ Profileimage, Name, Username, Bio, userid }, dispatch] =
+    useDataLayerValue();
   async function changepassword() {
     console.log(password);
     await axios
@@ -196,12 +204,53 @@ function Profile() {
         }
       });
   }
+  var lightdark;
+  var [themer, setthemer] = useState('');
+  useEffect(() => {
+    setthemer(localStorage.getItem('themechanger'));
+    // dispatch({
+    //   type: 'SET_themechange',
+    //   themechange: lightdark,
+    // });
+  }, []);
+  const themechange = () => ({
+    lighttheme: [
+      { card: 'white' },
+      { text: 'black' },
+      { back: '' },
+      { comment: 'white' },
+      { bigbox: 'white' },
+      { border: 'none' },
+    ],
+    // f5f5ff
+    darktheme: [
+      { card: '#000000' },
+      { text: 'white' },
+      { back: '#212121' },
+      { comment: 'rgb(32, 35, 39)' },
+      { bigbox: 'rgb(14 14 14)' },
+      { border: 'rgb(14 14 14)' },
+    ],
+  });
+  lightdark = themechange();
   return (
     <div>
       <Topbar />
       <Sidebar className='Sidebar' location='profile' />
       <Router>
-        <div>
+        <div
+          style={
+            themer == 'true'
+              ? {
+                  backgroundColor: lightdark.darktheme[0].card,
+                  color: lightdark.darktheme[1].text,
+                }
+              : {
+                  backgroundColor: lightdark.lighttheme[0].card,
+                  color: lightdark.lighttheme[1].text,
+                }
+          }
+        >
           <div className='Profile'>
             <div className='Profile_coverimg'>
               <div className='overlay'></div>
@@ -233,7 +282,7 @@ function Profile() {
                   <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                       {theme.direction === 'rtl' ? (
-                        <ChevronLeftIcon />
+                        <ChevronLeftIcon style={{ fontSize: '15vw' }} />
                       ) : (
                         <ChevronRightIcon />
                       )}
@@ -357,6 +406,172 @@ function Profile() {
                                     </div>
                                   </div>
                                 </div>
+                                <div className='changepassword-forgot'>
+                                  <ListItem
+                                    type='button'
+                                    onClick={handleOpen2}
+                                    button
+                                  >
+                                    <button className='changepassword-forgot-button'>
+                                      Forgot Password
+                                    </button>
+                                  </ListItem>
+                                  <Modal
+                                    aria-labelledby='transition-modal-title'
+                                    aria-describedby='transition-modal-description'
+                                    className={classes.modal}
+                                    open={open2}
+                                    onClose={handleClose2}
+                                    closeAfterTransition
+                                    BackdropComponent={Backdrop}
+                                    BackdropProps={{
+                                      timeout: 500,
+                                    }}
+                                  >
+                                    <Fade in={open2}>
+                                      <div className={classes.paper}>
+                                        <div className='changepassword-main'>
+                                          <div className='changepassword-main-1'>
+                                            <div className='changepassword-adjust'>
+                                              <form
+                                                className={classes.root}
+                                                noValidate
+                                                autoComplete='off'
+                                                style={{
+                                                  padding: '7px 10px',
+                                                }}
+                                              >
+                                                <TextField
+                                                  type={passwordtype}
+                                                  onChange={(e) =>
+                                                    setoldpassword(
+                                                      e.target.value
+                                                    )
+                                                  }
+                                                  id='outlined-basic'
+                                                  label='OTP'
+                                                  variant='outlined'
+                                                  style={{
+                                                    width: '300px',
+                                                  }}
+                                                />
+                                              </form>
+                                            </div>
+                                          </div>
+                                          <div className='changepassword-main-2'>
+                                            <div className='changepassword-adjust'>
+                                              <form
+                                                className={classes.root}
+                                                noValidate
+                                                autoComplete='off'
+                                                style={{
+                                                  padding: '7px 10px',
+                                                }}
+                                              >
+                                                <TextField
+                                                  required
+                                                  type={passwordtype}
+                                                  name=''
+                                                  placeholder='Password '
+                                                  // value={SignupPassword}
+                                                  onChange={(e) =>
+                                                    setpassword(e.target.value)
+                                                  }
+                                                  id='outlined-basic'
+                                                  label='Confirm Password'
+                                                  variant='outlined'
+                                                  style={{
+                                                    width: '300px',
+                                                  }}
+                                                />
+                                              </form>
+                                              <div className='changepassword-visible-icon'>
+                                                <VisibilityIcon
+                                                  onClick={() => {
+                                                    setpasswordtype('text');
+                                                    seticon2style(Iconshow);
+                                                    seticon1style(Iconhide);
+                                                  }}
+                                                  style={icon1style}
+                                                />
+                                                <VisibilityOffIcon
+                                                  onClick={() => {
+                                                    setpasswordtype('password');
+                                                    seticon1style(Iconshow);
+                                                    seticon2style(Iconhide);
+                                                  }}
+                                                  style={icon2style}
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className='changepassword-main-3'>
+                                            <div className='changepassword-adjust'>
+                                              <form
+                                                className={classes.root}
+                                                noValidate
+                                                autoComplete='off'
+                                                style={{
+                                                  padding: '7px 10px',
+                                                }}
+                                              >
+                                                <TextField
+                                                  required
+                                                  type={passwordtype}
+                                                  name=''
+                                                  placeholder='Password '
+                                                  // value={SignupPassword}
+                                                  onChange={(e) =>
+                                                    setpassword(e.target.value)
+                                                  }
+                                                  id='outlined-basic'
+                                                  label='Confirm Password'
+                                                  variant='outlined'
+                                                  style={{
+                                                    width: '300px',
+                                                  }}
+                                                />
+                                              </form>
+                                              <div className='changepassword-visible-icon'>
+                                                <VisibilityIcon
+                                                  onClick={() => {
+                                                    setpasswordtype('text');
+                                                    seticon2style(Iconshow);
+                                                    seticon1style(Iconhide);
+                                                  }}
+                                                  style={icon1style}
+                                                />
+                                                <VisibilityOffIcon
+                                                  onClick={() => {
+                                                    setpasswordtype('password');
+                                                    seticon1style(Iconshow);
+                                                    seticon2style(Iconhide);
+                                                  }}
+                                                  style={icon2style}
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <Button
+                                            variant='contained'
+                                            // onClick={changepassword}
+                                            type='submit'
+                                            color='default'
+                                            disableElevation
+                                            style={{
+                                              width: '300px',
+                                              display: 'flex',
+                                              margin: 'auto',
+                                              marginTop: '10px',
+                                            }}
+                                          >
+                                            set Password
+                                          </Button>
+                                        </div>
+                                      </div>
+                                    </Fade>
+                                  </Modal>
+                                </div>
                                 <Button
                                   variant='contained'
                                   onClick={changepassword}
@@ -444,7 +659,7 @@ function Profile() {
                       control={
                         <Switch
                           checked={state.checkedB}
-                          onChange={handleChange}
+                          onClick={handleChange}
                           name='checkedB'
                           color='primary'
                         />
@@ -491,7 +706,20 @@ function Profile() {
               </div>
             </div>
             <div className='main-container'>
-              <div className='container1'>
+              <div
+                style={
+                  themer == 'true'
+                    ? {
+                        backgroundColor: lightdark.darktheme[3].comment,
+                        color: lightdark.darktheme[1].text,
+                      }
+                    : {
+                        backgroundColor: lightdark.lighttheme[3].comment,
+                        color: lightdark.lighttheme[1].text,
+                      }
+                }
+                className='container1'
+              >
                 <div className='profile-img'>
                   <img
                     src={`https://res.cloudinary.com/di9lrcrlj/${Profileimage}`}
@@ -523,8 +751,21 @@ function Profile() {
                 {/* } */}
               </div>
 
-              <div className='container2'>
-                <Profilepost />
+              <div
+                style={
+                  themer == 'true'
+                    ? {
+                        backgroundColor: lightdark.darktheme[3].comment,
+                        color: lightdark.darktheme[1].text,
+                      }
+                    : {
+                        backgroundColor: lightdark.lighttheme[3].comment,
+                        color: lightdark.lighttheme[1].text,
+                      }
+                }
+                className='container2'
+              >
+                <Profilepost username={Username} />
               </div>
             </div>
           </div>
@@ -610,6 +851,4 @@ function Profile() {
   );
 }
 
-console.log(themechanger);
-export { themechanger };
 export default Profile;

@@ -16,9 +16,10 @@ export const initialState = {
   postId: '',
   storylist: '',
   themechange: '',
+  likeopen: false,
 };
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case 'SET_SignupUserName':
       return {
@@ -107,6 +108,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         themechange: action.themechange,
+      };
+    case 'SET_likeopen':
+      return {
+        ...state,
+        likeopen: action.likeopen,
       };
 
     default:

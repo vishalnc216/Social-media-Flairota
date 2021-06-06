@@ -1,48 +1,67 @@
-html{
-    /* background-color: rgb(0,0,0,0.8); */
+html {
+  /* background-color: rgb(0,0,0,0.8); */
 }
-.Story{
-    width: 470px;
-    height: 95vh;
-    position: relative;
-    margin: auto;
-    margin-top: 2.5vh;
+.Story {
+  width: 470px;
+  height: 95vh;
+  position: relative;
+  margin: auto;
+  margin-top: 2.5vh;
+  background-color: black;
+  border-radius: 20px;
 }
-.Story>img{
-    width: 470px;
-    height: 95vh;
-    border-radius: 19px;
+.icon1,
+.icon2 {
+  cursor: pointer;
+  color: white;
+  width: 15px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
 }
-.Story-bottom{
-    position: absolute;
-    bottom: 2vh;
-    display: flex;
-    align-items: center;
-    gap: 245px;
-    margin-left: 12px;
+.Story > img {
+  width: 470px;
+  height: 95vh;
+  border-radius: 19px;
+  object-fit: contain;
 }
-.story-userinfo{
-
-    display: flex;
-    align-items: center;
-    color: white;
-    gap: 10px;
-
+.Story-bottom {
+  position: absolute;
+  bottom: 2vh;
+  display: flex;
+  align-items: center;
+  gap: 245px;
+  margin-left: 12px;
 }
-.story-userinfo>img{
-    width: 53px;
-    border-radius: 50%;
-    cursor: pointer;
+.story-userinfo {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10px;
 }
-.story-userinfo>span{
-    color: white;
-    cursor: pointer;
+.story-userinfo > img {
+  width: 53px;
+  border-radius: 50%;
+  cursor: pointer;
 }
-.Story-bottom>a{
-    color: white;
-    border: 1px solid;
-    border-radius: 10px;
-    font-size: 14px;
-    padding: 6px 15px;
-    cursor: pointer;
+.story-userinfo > span {
+  color: white;
+  cursor: pointer;
+}
+.story-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  gap: 490px;
+  display: flex;
+}
+.Story-bottom > a {
+  color: white;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 6px 15px;
+  cursor: pointer;
 }

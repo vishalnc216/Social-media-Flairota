@@ -5,8 +5,9 @@ import './Comment.css';
 import { Link } from 'react-router-dom';
 import axios from '../axios';
 import { useDataLayerValue } from '../ContextAPI/DataLayer';
-import Topbar from './Topbar';
+// import Topbar from './Topbar';
 import { logDOM } from '@testing-library/dom';
+// import Topbar from '../Common/Topbar';
 function Comment2(props) {
   // console.log(props);
 
@@ -52,12 +53,13 @@ function Comment2(props) {
   };
   const showcommentlike = async (commentid) => {
     await axios.get(`/api/posts/get_comment_like/${commentid}/`).then((res) => {
-      // setCommentLike(res.data.length);
+      setCommentLike(res.data.length);
       console.log(res.data);
     });
   };
   return (
     <div className='comment-main-countainer'>
+      {/* <Topbar /> */}
       <div className='comment-comment-section'>
         <div className='comment-show'>
           {show == true ? (
@@ -69,7 +71,7 @@ function Comment2(props) {
                     deletecomment(props.data.user.user.id, props.data.id)
                   }
                 >
-                  Delete Post
+                  Delete Comment
                 </div>
               ) : (
                 <div></div>

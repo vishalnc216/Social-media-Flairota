@@ -98,7 +98,7 @@ function Profile(props) {
           <div className='Profile'>
             <div className='Profile_coverimg'>
               <div className='overlay'></div>
-              <img src='/image/5.jpg' />
+              <img src='/image/background.png' />
             </div>
             <div className='profile-setting'>
               <SettingsIcon />
@@ -143,7 +143,10 @@ function Profile(props) {
               </div>
 
               <div className='container2'>
-                <Profilepost username={props.match.params.username} location='userprofile' />
+                <Profilepost
+                  username={props.match.params.username}
+                  location='userprofile'
+                />
               </div>
             </div>
           </div>
